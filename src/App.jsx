@@ -5,6 +5,8 @@
 
 import React from "react";
 import logo from "./assets/logo.png";
+import { MdSmartphone } from "react-icons/md";
+
 
 const WHATSAPP_NUMBER = "5551994309788";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -57,7 +59,7 @@ const DIFERENCIAIS = [
 
 const SERVICOS = [
   {
-    icon: "📺",
+    icon: <MdSmartphone />,
     title: "Troca de Tela",
     desc: "Substituição completa do display com tela original ou de alta qualidade. Resolve rachaduras, manchas e touch sem resposta.",
     tag: "Mais solicitado",
@@ -313,7 +315,7 @@ export default function LandingPage() {
               Serviços Disponíveis
             </h2>
             <p className="text-[#6b7f92] max-w-lg mb-12">
-              Atendemos todos os modelos de iPhone, do SE ao 15 Pro Max.
+              Atendemos todos os modelos de iPhone, do X ao 17 Pro Max.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" role="list">
               {SERVICOS.map(({ icon, title, desc, tag }) => (
