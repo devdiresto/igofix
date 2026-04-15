@@ -388,7 +388,7 @@ export default function LandingPage() {
           <nav aria-label="Serviços">
             <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">Serviços</h4>
             <ul className="flex flex-col gap-2 text-sm text-[#6b7f92]">
-              {["Troca de Tela", "Troca de Bateria", "Conector de Carga", "Câmera", "Dano por Líquido"].map((s) => (
+              {["Troca de Tela", "Troca de Bateria", "Conector de Carga", "Câmera"].map((s) => (
                 <li key={s}>
                   <a href="#servicos" className="hover:text-teal-400 transition-colors">{s}</a>
                 </li>
@@ -399,11 +399,11 @@ export default function LandingPage() {
           <address className="not-italic">
             <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">Contato</h4>
             <ul className="flex flex-col gap-2 text-sm text-[#6b7f92]">
-              <li>📍 Porto Alegre, RS</li>
+              <li>📍 Cachoeirinha, RS</li>
               <li>📱 WhatsApp: (51) 9 9430-9788</li>
               <li>🕘 Seg–Sáb: 8h às 20h</li>
               <li>
-                <a href="https://instagram.com/" className="hover:text-teal-400 transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com/igofix_br" className="hover:text-teal-400 transition-colors" target="_blank" rel="noopener noreferrer">
                   Instagram
                 </a>
               </li>
@@ -412,8 +412,7 @@ export default function LandingPage() {
         </div>
 
         <div className="max-w-5xl mx-auto flex flex-wrap justify-between gap-3 mt-10 pt-6 border-t border-teal-500/10 text-xs text-[#6b7f92]">
-          <span>© 2025 IGoFixDelivery. Todos os direitos reservados.</span>
-          <span>CNPJ: 00.000.000/0001-00</span>
+          <span>© 2026 IGoFixDelivery. Todos os direitos reservados.</span>
         </div>
       </footer>
 
