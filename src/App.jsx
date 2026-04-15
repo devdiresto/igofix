@@ -4,10 +4,9 @@
 // Stack: React + Tailwind CSS
 
 import React from "react";
+import logo from "./assets/logo.png";
 
-// ─── Dados ────────────────────────────────────────────────────────────────────
-
-const WHATSAPP_NUMBER = "5551994309788"; // ← troque pelo seu número
+const WHATSAPP_NUMBER = "5551994309788";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 const DIFERENCIAIS = [
@@ -136,10 +135,10 @@ export default function LandingPage() {
     <div className="bg-[#080c10] text-[#e8f0f8] font-sans antialiased overflow-x-hidden">
 
       {/* ── HEADER ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 pl-12 bg-[rgba(8,12,16,0.85)] backdrop-blur-md border-b border-teal-500/10">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-[rgba(8,12,16,0.85)] backdrop-blur-md border-b border-teal-500/10">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-lg">
-            📱
+          <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-teal-400 to-blue-500">
+            <img src={logo} alt="IGoFixDelivery" className="w-full h-full object-contain" />
           </div>
           <span className="font-bold text-base tracking-tight">
             IGoFix<span className="text-teal-400">Delivery</span>
@@ -155,13 +154,14 @@ export default function LandingPage() {
         </a>
       </header>
 
-      <main className="pl-8">
+      <main>
+
         {/* ── HERO ── */}
         <section
-          className="relative min-h-screen flex flex-col justify-center px-6 pt-28 pb-20"
+          className="relative min-h-screen flex items-center pt-20"
           aria-labelledby="hero-title"
         >
-          {/* Background radial glow */}
+          {/* Glow de fundo */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
@@ -169,7 +169,7 @@ export default function LandingPage() {
                 "radial-gradient(ellipse 80% 60% at 60% 30%, rgba(0,144,255,0.08) 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 20% 80%, rgba(0,212,180,0.07) 0%, transparent 60%)",
             }}
           />
-          {/* Grid texture */}
+          {/* Grid de fundo */}
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.04]"
             style={{
@@ -179,64 +179,100 @@ export default function LandingPage() {
             }}
           />
 
-          <div className="relative max-w-5xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-teal-400/10 border border-teal-400/30 rounded-full px-4 py-1.5 text-teal-400 text-sm font-medium mb-7">
-              <span className="text-[8px] animate-pulse">●</span>
-              Atendimento em Porto Alegre e região
+          {/*
+           * ESTRUTURA DO HERO
+           * px-6 lg:px-12  → pequena margem nas extremidades
+           * justify-between → texto na esquerda, logo na direita
+           * items-center    → alinha verticalmente ao centro
+           */}
+          <div className="relative w-full flex flex-col lg:flex-row items-center justify-between gap-12 px-6 lg:px-12 py-16">
+
+            {/* ── ESQUERDA: conteúdo textual ── */}
+            <div className="flex flex-col items-start w-full lg:max-w-[52%]">
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-teal-400/10 border border-teal-400/30 rounded-full px-4 py-1.5 text-teal-400 text-sm font-medium mb-7">
+                <span className="text-[8px] animate-pulse">●</span>
+                Atendimento em Porto Alegre e região
+              </div>
+
+              {/* H1 */}
+              <h1
+                id="hero-title"
+                className="text-4xl sm:text-5xl xl:text-[3.5rem] font-extrabold text-white leading-tight mb-5"
+              >
+                Assistência Técnica de<br />
+                iPhone{" "}
+                <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                  Delivery
+                </span>
+                <br />
+                em Porto Alegre
+              </h1>
+
+              <p className="text-lg text-[#6b7f92] font-light max-w-lg mb-10">
+                Seu iPhone consertado sem sair de casa. Vamos até você, realizamos o reparo na hora e
+                você acompanha tudo em tempo real.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-4 mb-14">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-400 to-teal-600 text-black font-bold px-8 py-4 rounded-xl shadow-[0_0_30px_rgba(0,212,180,0.25)] hover:shadow-[0_4px_40px_rgba(0,212,180,0.4)] hover:-translate-y-0.5 transition-all"
+                >
+                  <WhatsAppIcon />
+                  Agendar Agora
+                </a>
+                <a
+                  href="#servicos"
+                  className="inline-flex items-center gap-2 border border-teal-500/15 text-[#e8f0f8] font-semibold px-7 py-4 rounded-xl hover:border-teal-400 hover:text-teal-400 transition-all"
+                >
+                  Ver Serviços →
+                </a>
+              </div>
+
+              {/* Stats */}
+              <div className="flex flex-wrap gap-10">
+                {[
+                  { n: "500+", label: "Reparos realizados" },
+                  { n: "90d",  label: "Garantia no serviço" },
+                  { n: "~1h",  label: "Tempo médio de reparo" },
+                ].map(({ n, label }) => (
+                  <div key={label} className="flex flex-col">
+                    <span className="text-3xl font-extrabold text-white">{n}</span>
+                    <span className="text-xs text-[#6b7f92]">{label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* H1 — palavra-chave principal */}
-            <h1
-              id="hero-title"
-              className="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-5"
-            >
-              Assistência Técnica de<br />
-              iPhone{" "}
-              <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-                Delivery
-              </span>
-              <br />
-              em Porto Alegre
-            </h1>
+            {/* ── DIREITA: Logo grande ── */}
+            <div className="w-full lg:max-w-[44%] flex justify-center lg:justify-end">
+              <div className="relative group">
+                {/* Glow atrás */}
+                <div className="absolute -inset-8 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition duration-1000 pointer-events-none" />
 
-            <p className="text-lg text-[#6b7f92] font-light max-w-lg mb-10">
-              Seu iPhone consertado sem sair de casa. Vamos até você, realizamos o reparo na hora e
-              você acompanha tudo em tempo real.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-400 to-teal-600 text-black font-bold px-8 py-4 rounded-xl shadow-[0_0_30px_rgba(0,212,180,0.25)] hover:shadow-[0_4px_40px_rgba(0,212,180,0.4)] hover:-translate-y-0.5 transition-all"
-              >
-                <WhatsAppIcon />
-                Agendar Agora
-              </a>
-              <a
-                href="#servicos"
-                className="inline-flex items-center gap-2 border border-teal-500/15 text-[#e8f0f8] font-semibold px-7 py-4 rounded-xl hover:border-teal-400 hover:text-teal-400 transition-all"
-              >
-                Ver Serviços →
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 mt-14">
-              {[
-                { n: "500+", label: "Reparos realizados" },
-                { n: "90d", label: "Garantia no serviço" },
-                { n: "~1h", label: "Tempo médio de reparo" },
-              ].map(({ n, label }) => (
-                <div key={label} className="flex flex-col">
-                  <span className="text-3xl font-extrabold text-white font-display">{n}</span>
-                  <span className="text-xs text-[#6b7f92]">{label}</span>
+                {/* Moldura glassmorphism — tamanho fixo responsivo */}
+                <div
+                  className="relative flex items-center justify-center rounded-full
+                              bg-white/[0.03] border border-white/10 backdrop-blur-sm shadow-2xl
+                              p-8
+                              w-64 h-64 sm:w-80 sm:h-80 lg:w-[360px] lg:h-[360px]"
+                >
+                  <img
+                    src={logo}
+                    alt="IGoFix Delivery — Assistência técnica de iPhone em Porto Alegre"
+                    className="w-full h-full object-contain
+                               drop-shadow-[0_0_30px_rgba(45,212,191,0.25)]
+                               transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-              ))}
+              </div>
             </div>
+
           </div>
         </section>
 
@@ -334,11 +370,10 @@ export default function LandingPage() {
       {/* ── FOOTER ── */}
       <footer className="bg-[#0d1318] border-t border-teal-500/10 pt-12 pb-20 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-10">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center text-lg">
-                📱
+              <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-teal-400 to-blue-500">
+                <img src={logo} alt="IGoFixDelivery" className="w-full h-full object-contain" />
               </div>
               <span className="font-bold">
                 IGoFix<span className="text-teal-400">Delivery</span>
@@ -350,40 +385,25 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Serviços */}
           <nav aria-label="Serviços">
-            <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">
-              Serviços
-            </h4>
+            <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">Serviços</h4>
             <ul className="flex flex-col gap-2 text-sm text-[#6b7f92]">
-              {["Troca de Tela", "Troca de Bateria", "Conector de Carga", "Câmera", "Dano por Líquido"].map(
-                (s) => (
-                  <li key={s}>
-                    <a href="#servicos" className="hover:text-teal-400 transition-colors">
-                      {s}
-                    </a>
-                  </li>
-                )
-              )}
+              {["Troca de Tela", "Troca de Bateria", "Conector de Carga", "Câmera", "Dano por Líquido"].map((s) => (
+                <li key={s}>
+                  <a href="#servicos" className="hover:text-teal-400 transition-colors">{s}</a>
+                </li>
+              ))}
             </ul>
           </nav>
 
-          {/* Contato */}
           <address className="not-italic">
-            <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">
-              Contato
-            </h4>
+            <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">Contato</h4>
             <ul className="flex flex-col gap-2 text-sm text-[#6b7f92]">
               <li>📍 Porto Alegre, RS</li>
-              <li>📱 WhatsApp: (51) 9 0000-0000</li>
+              <li>📱 WhatsApp: (51) 9 9430-9788</li>
               <li>🕘 Seg–Sáb: 8h às 20h</li>
               <li>
-                <a
-                  href="https://instagram.com/"
-                  className="hover:text-teal-400 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://instagram.com/" className="hover:text-teal-400 transition-colors" target="_blank" rel="noopener noreferrer">
                   Instagram
                 </a>
               </li>
@@ -391,7 +411,6 @@ export default function LandingPage() {
           </address>
         </div>
 
-        {/* Bottom bar */}
         <div className="max-w-5xl mx-auto flex flex-wrap justify-between gap-3 mt-10 pt-6 border-t border-teal-500/10 text-xs text-[#6b7f92]">
           <span>© 2025 IGoFixDelivery. Todos os direitos reservados.</span>
           <span>CNPJ: 00.000.000/0001-00</span>
@@ -404,7 +423,7 @@ export default function LandingPage() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar pelo WhatsApp"
-        className="fixed bottom-7 right-6 z-50 flex items-center gap-2.5 bg-[#25D366] text-white font-bold text-sm px-5 py-3.5 rounded-full shadow-[0_4px_24px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_32px_rgba(37,211,102,0.5)] hover:-translate-y-1 hover:scale-105 transition-all sm:rounded-full"
+        className="fixed bottom-7 right-6 z-50 flex items-center gap-2.5 bg-[#25D366] text-white font-bold text-sm px-5 py-3.5 rounded-full shadow-[0_4px_24px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_32px_rgba(37,211,102,0.5)] hover:-translate-y-1 hover:scale-105 transition-all"
       >
         <WhatsAppIcon />
         <span className="hidden sm:inline">Falar no WhatsApp</span>
@@ -413,16 +432,9 @@ export default function LandingPage() {
   );
 }
 
-// ─── Ícone WhatsApp ────────────────────────────────────────────────────────────
 function WhatsAppIcon() {
   return (
-    <svg
-      width="20"
-      height="20"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
       <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.114 1.527 5.845L0 24l6.335-1.527A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.656-.493-5.191-1.357l-.371-.22-3.763.907.923-3.667-.242-.381A9.95 9.95 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z" />
     </svg>
