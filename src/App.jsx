@@ -203,7 +203,7 @@ export default function LandingPage() {
                 id="hero-title"
                 className="text-4xl sm:text-5xl xl:text-[3.5rem] font-extrabold text-white leading-tight mb-5"
               >
-                Assistência Técnica de<br />
+                Reparo de<br />
                 iPhone{" "}
                 <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
                   Delivery
@@ -213,7 +213,7 @@ export default function LandingPage() {
               </h1>
 
               <p className="text-lg text-[#6b7f92] font-light max-w-lg mb-10">
-                Seu iPhone consertado sem sair de casa. Vamos até você, realizamos o reparo na hora e
+                Seu aparelho consertado sem sair de casa. Vamos até você, realizamos o reparo na hora e
                 você acompanha tudo em tempo real.
               </p>
 
@@ -382,7 +382,7 @@ export default function LandingPage() {
               </span>
             </div>
             <p className="text-sm text-[#6b7f92] leading-relaxed max-w-xs">
-              Assistência técnica de iPhone delivery em Porto Alegre. Reparos com qualidade,
+              Assistência delivery em Porto Alegre. Reparos com qualidade,
               agilidade e garantia.
             </p>
           </div>
