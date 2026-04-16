@@ -415,6 +415,7 @@ export default function LandingPage() {
 
         <div className="max-w-5xl mx-auto flex flex-wrap justify-between gap-3 mt-10 pt-6 border-t border-teal-500/10 text-xs text-[#6b7f92]">
           <span>© 2026 IGoFixDelivery. Todos os direitos reservados.</span>
+          <span>iGoFix é uma assistência independente e não possui vínculo com a Apple Inc.</span>
         </div>
       </footer>
 
