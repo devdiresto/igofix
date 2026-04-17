@@ -6,7 +6,9 @@
 import React from "react";
 import logo from "./assets/logo.png";
 import { MdSmartphone } from "react-icons/md";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PrivacyPolicy from "./PrivacyPolicy";
+import { Link } from "react-router-dom";
 
 const WHATSAPP_NUMBER = "5551994309788";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -132,7 +134,7 @@ const STEPS = [
 
 // ─── Componente Principal ──────────────────────────────────────────────────────
 
-export default function LandingPage() {
+function LandingPage() {
   return (
     <div className="bg-[#080c10] text-[#e8f0f8] font-sans antialiased overflow-x-hidden">
 
@@ -415,6 +417,12 @@ export default function LandingPage() {
 
         <div className="max-w-5xl mx-auto flex flex-wrap justify-between gap-3 mt-10 pt-6 border-t border-teal-500/10 text-xs text-[#6b7f92]">
           <span>© 2026 IGoFixDelivery. Todos os direitos reservados.</span>
+           <Link 
+    to="/politica-de-privacidade" 
+    className="hover:text-teal-400 transition-colors"
+  >
+    Política de Privacidade
+  </Link>
           <span>iGoFix é uma assistência independente e não possui vínculo com a Apple Inc.</span>
         </div>
       </footer>
@@ -433,6 +441,18 @@ export default function LandingPage() {
     </div>
   );
 }
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
 
 function WhatsAppIcon() {
   return (
