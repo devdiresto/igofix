@@ -189,13 +189,13 @@ function LandingPage() {
            * justify-between → texto na esquerda, logo na direita
            * items-center    → alinha verticalmente ao centro
            */}
-          <div className="relative w-full flex flex-col lg:flex-row items-center justify-between gap-12 px-6 lg:px-12 py-16">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-start gap-12 px-6 lg:px-12 py-5">
 
             {/* ── ESQUERDA: conteúdo textual ── */}
-            <div className="flex flex-col items-start w-full lg:max-w-[52%]">
+            <div className="flex flex-col items-start w-full lg:max-w-none">
 
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-teal-400/10 border border-teal-400/30 rounded-full px-4 py-1.5 text-teal-400 text-sm font-medium mb-7">
+              <div className="inline-flex items-center gap-2 bg-teal-400/10 border border-teal-400/30 rounded-full px-4  text-teal-400 text-sm font-medium mb-7">
                 <span className="text-[8px] animate-pulse">●</span>
                 Atendimento em Porto Alegre e região
               </div>
@@ -203,14 +203,12 @@ function LandingPage() {
               {/* H1 */}
               <h1
                 id="hero-title"
-                className="text-4xl sm:text-5xl xl:text-[3.5rem] font-extrabold text-white leading-tight mb-5"
+                className="text-7xl sm:text-7xl xl:text-[3.5rem] font-extrabold text-white leading-tight mb-5"
               >
-                Serviços para<br />
+                Serviços para
                 iPhone{" "}
-                <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-                  Delivery
-                </span>
-                <br />
+                <br /><span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+                  Delivery </span>
                 em Porto Alegre
               </h1>
 
@@ -232,7 +230,7 @@ function LandingPage() {
                 </a>
                 <a
                   href="#servicos"
-                  className="inline-flex items-center gap-2 border border-teal-500/15 text-[#e8f0f8] font-semibold px-7 py-4 rounded-xl hover:border-teal-400 hover:text-teal-400 transition-all"
+                  className="inline-flex items-center gap-2 border border-teal-500/15 text-[#e8f0f8] font-semibold px-12 py-4 rounded-xl hover:border-teal-400 hover:text-teal-400 transition-all"
                 >
                   Ver Serviços →
                 </a>
@@ -254,28 +252,7 @@ function LandingPage() {
             </div>
 
             {/* ── DIREITA: Logo grande ── */}
-            <div className="w-full lg:max-w-[44%] flex justify-center lg:justify-end">
-              <div className="relative group">
-                {/* Glow atrás */}
-                <div className="absolute -inset-8 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition duration-1000 pointer-events-none" />
-
-                {/* Moldura glassmorphism — tamanho fixo responsivo */}
-                <div
-                  className="relative flex items-center justify-center rounded-full
-                              bg-white/[0.03] border border-white/10 backdrop-blur-sm shadow-2xl
-                              p-8
-                              w-64 h-64 sm:w-80 sm:h-80 lg:w-[360px] lg:h-[360px]"
-                >
-                  <img
-                    src={logo}
-                    alt="IGo Delivery — Serviços para iPhone em Porto Alegre"
-                    className="w-full h-full object-contain
-                               drop-shadow-[0_0_30px_rgba(45,212,191,0.25)]
-                               transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
+            
 
           </div>
         </section>
