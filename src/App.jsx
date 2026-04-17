@@ -1,5 +1,5 @@
 // LandingPage.jsx
-// Assistência Técnica de iPhone Delivery
+// Serviços para iPhone Delivery
 // Otimizado para SEO + Google Ads
 // Stack: React + Tailwind CSS
 
@@ -19,7 +19,7 @@ const DIFERENCIAIS = [
     title: "Vamos até você",
     desc: (
       <>
-        Atendemos em domicílio, trabalho ou onde for mais conveniente.{" "}
+        Atendemos em domicílio, trabalho ou onde for conveniente.{" "}
         <strong className="text-teal-400 font-semibold">Zero deslocamento</strong> da sua parte.
       </>
     ),
@@ -31,7 +31,7 @@ const DIFERENCIAIS = [
       <>
         Utilizamos{" "}
         <strong className="text-teal-400 font-semibold">peças de alta qualidade</strong> testadas e
-        aprovadas para garantir a durabilidade do reparo.
+        aprovadas para garantir a durabilidade do serviço.
       </>
     ),
   },
@@ -48,10 +48,10 @@ const DIFERENCIAIS = [
   },
   {
     icon: "⚡",
-    title: "Reparo na hora",
+    title: "Serviço na hora",
     desc: (
       <>
-        A maioria dos reparos é concluída{" "}
+        A maioria dos serviços é concluída{" "}
         <strong className="text-teal-400 font-semibold">em até 1 hora</strong> no local. Você
         acompanha tudo.
       </>
@@ -62,13 +62,13 @@ const DIFERENCIAIS = [
 const SERVICOS = [
   {
     icon: <MdSmartphone />,
-    title: "Troca de Tela",
-    desc: "Substituição completa do display com tela original ou de alta qualidade. Resolve rachaduras, manchas e touch sem resposta.",
+    title: "Tela Nova",
+    desc: "Instalação completa do display com tela original ou de alta qualidade. Resolve rachaduras, manchas e touch sem resposta.",
     tag: "Mais solicitado",
   },
   {
     icon: "🔋",
-    title: "Troca de Bateria",
+    title: "Bateria Nova",
     desc: (
       <>
         Bateria nova com{" "}
@@ -80,20 +80,20 @@ const SERVICOS = [
   },
   {
     icon: "🎙️",
-    title: "Troca de Microfone",
-    desc: "Sua voz não chega clara nas chamadas? Realizamos a substituição do microfone com diagnóstico gratuito.",
+    title: "Microfone Novo",
+    desc: "Seu voz não chega clara nas chamadas? Realizamos a instalação do microfone com diagnóstico gratuito.",
     tag: "Diagnóstico grátis",
   },
   {
     icon: "🔌",
-    title: "Conector de Carga",
-    desc: "iPhone não está carregando ou reconhecendo o cabo? Trocamos o conector Lightning ou USB-C com rapidez.",
+    title: "Conector de Carga Novo",
+    desc: "iPhone não está carregando ou reconhecendo o cabo? Instalamos o conector Lightning ou USB-C com rapidez.",
     tag: "Rápido",
   },
   {
     icon: "📸",
-    title: "Câmera Traseira / Frontal",
-    desc: "Fotos fora de foco, câmera preta ou selfie com problema. Substituição completa do módulo de câmera.",
+    title: "Câmera Nova",
+    desc: "Fotos fora de foco, câmera preta ou selfie com problema. Instalação completa do módulo de câmera.",
     tag: "Alta qualidade",
   },
 ];
@@ -115,17 +115,17 @@ const STEPS = [
     desc: (
       <>
         Chegamos no horário combinado, avaliamos o aparelho e informamos o custo antes de começar
-        qualquer reparo.{" "}
+        qualquer serviço.{" "}
         <strong className="text-teal-400 font-semibold">Sem surpresas.</strong>
       </>
     ),
   },
   {
     n: "4",
-    title: "Reparo e entrega",
+    title: "Serviço e entrega",
     desc: (
       <>
-        Realizamos o reparo na hora, você testa o aparelho e só paga quando estiver{" "}
+        Realizamos o serviço na hora, você testa o aparelho e só paga quando estiver{" "}
         <strong className="text-teal-400 font-semibold">100% satisfeito</strong>.
       </>
     ),
@@ -145,7 +145,7 @@ function LandingPage() {
             <img src={logo} alt="IGoFixDelivery" className="w-full h-full object-contain" />
           </div>
           <span className="font-bold text-base tracking-tight">
-            IGoFix<span className="text-teal-400">Delivery</span>
+            IGo<span className="text-teal-400">Delivery</span>
           </span>
         </div>
         <a
@@ -154,7 +154,7 @@ function LandingPage() {
           rel="noopener noreferrer"
           className="bg-teal-400 text-black font-bold text-sm px-5 py-2.5 rounded-lg hover:opacity-90 hover:-translate-y-px transition-all"
         >
-          Solicitar Visita
+          Solicitar Serviço
         </a>
       </header>
 
@@ -205,7 +205,7 @@ function LandingPage() {
                 id="hero-title"
                 className="text-4xl sm:text-5xl xl:text-[3.5rem] font-extrabold text-white leading-tight mb-5"
               >
-                Reparo de<br />
+                Serviços para<br />
                 iPhone{" "}
                 <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
                   Delivery
@@ -215,7 +215,7 @@ function LandingPage() {
               </h1>
 
               <p className="text-lg text-[#6b7f92] font-light max-w-lg mb-10">
-                Seu aparelho consertado sem sair de casa. Vamos até você, realizamos o reparo na hora e
+                Seu aparelho com serviços sem sair de casa. Vamos até você, realizamos o serviço na hora e
                 você acompanha tudo em tempo real.
               </p>
 
@@ -228,7 +228,7 @@ function LandingPage() {
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-400 to-teal-600 text-black font-bold px-8 py-4 rounded-xl shadow-[0_0_30px_rgba(0,212,180,0.25)] hover:shadow-[0_4px_40px_rgba(0,212,180,0.4)] hover:-translate-y-0.5 transition-all"
                 >
                   <WhatsAppIcon />
-                  Agendar Agora
+                  Agendar Serviço
                 </a>
                 <a
                   href="#servicos"
@@ -241,9 +241,9 @@ function LandingPage() {
               {/* Stats */}
               <div className="flex flex-wrap gap-10">
                 {[
-                  { n: "500+", label: "Reparos realizados" },
+                  { n: "500+", label: "Serviços realizados" },
                   { n: "90d",  label: "Garantia no serviço" },
-                  { n: "~1h",  label: "Tempo médio de reparo" },
+                  { n: "~1h",  label: "Tempo médio de serviço" },
                 ].map(({ n, label }) => (
                   <div key={label} className="flex flex-col">
                     <span className="text-3xl font-extrabold text-white">{n}</span>
@@ -268,7 +268,7 @@ function LandingPage() {
                 >
                   <img
                     src={logo}
-                    alt="IGoFix Delivery — Assistência técnica de iPhone em Porto Alegre"
+                    alt="IGo Delivery — Serviços para iPhone em Porto Alegre"
                     className="w-full h-full object-contain
                                drop-shadow-[0_0_30px_rgba(45,212,191,0.25)]
                                transition-transform duration-500 group-hover:scale-105"
@@ -311,10 +311,10 @@ function LandingPage() {
         <div id="servicos" className="bg-[#0d1318] py-20 px-6">
           <div className="max-w-5xl mx-auto">
             <span className="text-xs font-semibold text-teal-400 tracking-widest uppercase">
-              O que consertamos
+              O que oferecemos
             </span>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-3 mb-4">
-              Serviços Disponíveis
+              Produtos Disponíveis
             </h2>
             <p className="text-[#6b7f92] max-w-lg mb-12">
               Atendemos todos os modelos de iPhone, do X ao 17 Pro Max.
@@ -377,14 +377,14 @@ function LandingPage() {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 bg-gradient-to-br from-teal-400 to-blue-500">
-                <img src={logo} alt="IGoFixDelivery" className="w-full h-full object-contain" />
+                <img src={logo} alt="IGoDelivery" className="w-full h-full object-contain" />
               </div>
               <span className="font-bold">
-                IGoFix<span className="text-teal-400">Delivery</span>
+                IGo<span className="text-teal-400">Delivery</span>
               </span>
             </div>
             <p className="text-sm text-[#6b7f92] leading-relaxed max-w-xs">
-              Assistência delivery em Porto Alegre. Reparos com qualidade,
+              Serviços delivery em Porto Alegre. Serviços com qualidade,
               agilidade e garantia.
             </p>
           </div>
@@ -392,7 +392,7 @@ function LandingPage() {
           <nav aria-label="Serviços">
             <h4 className="font-bold text-xs text-white uppercase tracking-widest mb-4">Serviços</h4>
             <ul className="flex flex-col gap-2 text-sm text-[#6b7f92]">
-              {["Troca de Tela", "Troca de Bateria", "Conector de Carga", "Câmera"].map((s) => (
+              {["Tela Nova", "Bateria Nova", "Conector de Carga Novo", "Câmera"].map((s) => (
                 <li key={s}>
                   <a href="#servicos" className="hover:text-teal-400 transition-colors">{s}</a>
                 </li>
@@ -416,14 +416,14 @@ function LandingPage() {
         </div>
 
         <div className="max-w-5xl mx-auto flex flex-wrap justify-between gap-3 mt-10 pt-6 border-t border-teal-500/10 text-xs text-[#6b7f92]">
-          <span>© 2026 IGoFixDelivery. Todos os direitos reservados.</span>
+          <span>© 2026 IGoDelivery. Todos os direitos reservados.</span>
            <Link 
     to="/politica-de-privacidade" 
     className="hover:text-teal-400 transition-colors"
   >
     Política de Privacidade
   </Link>
-          <span>iGoFix é uma assistência independente e não possui vínculo com a Apple Inc.</span>
+          <span>iGo é um serviço independente de delivery.</span>
         </div>
       </footer>
 

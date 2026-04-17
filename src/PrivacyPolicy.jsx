@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         {/* Introdução */}
         <section className="mb-8">
           <p className="text-[#6b7f92] leading-relaxed">
-            A IGoFix Delivery valoriza a sua privacidade e se compromete a proteger
+            A IGo Delivery valoriza a sua privacidade e se compromete a proteger
             os dados pessoais coletados em nosso site. Esta Política de Privacidade
             descreve como coletamos, usamos e protegemos suas informações, em
             conformidade com a legislação aplicável, incluindo a Lei Geral de
