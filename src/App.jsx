@@ -115,21 +115,21 @@ function LandingPage() {
 
         {/* ── HERO / CHAMADA PRINCIPAL COM IMAGEM ── */}
         <section 
-          className="relative py-32 px-6 min-h-screen flex items-center justify-start overflow-hidden"
+          className="relative py-32 px-6 min-h-screen flex items-center justify-center overflow-hidden"
           style={{
             backgroundImage: `url('/hero-iphone.png')`,
             backgroundAttachment: 'fixed',
-            backgroundPosition: 'right bottom',
-            backgroundSize: '55%',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
           }}
         >
           {/* Overlay escuro para melhorar legibilidade */}
-         <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/40" />
           
           {/* Conteúdo texto sobre a imagem */}
-          <div className="relative z-10 max-w-4xl text-left pl-20">
-            <div className="mb-8 flex justify-start">
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <div className="mb-8 flex justify-center">
               <img src={logo} alt="IGo Service" className="w-24 h-24 drop-shadow-lg" />
             </div>
             
@@ -137,18 +137,66 @@ function LandingPage() {
               Seja bem-vindo à <span className="text-teal-300">IGo Service</span>!
             </h1>
             
-            <p className="text-xl text-white/95 mb-10 max-w-2xl leading-relaxed drop-shadow-lg font-medium">
+            <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               Atendimento profissional <strong>na sua porta</strong>. Você continua em casa, nós vamos até você. 
               Serviço rápido, de qualidade e com garantia de 90 dias.
             </p>
+
             <a
               href={WHATSAPP_URL}
-              target="_blanks"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-teal-500 text-white font-bold px-10 py-4 rounded-lg hover:bg-teal-600 transition text-lg shadow-xl hover:shadow-2xl"
             >
               <WhatsAppIcon />
               Solicitar Orçamento
+            </a>
+          </div>
+        </section>
+
+        {/* ── VÍDEO REEL (PROVA SOCIAL) ── */}
+        <section className="max-w-2xl mx-auto px-6 py-16">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold text-teal-600 tracking-widest uppercase">
+              Veja na prática
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2 mb-4">
+              Atendimento em ação
+            </h2>
+          </div>
+
+          {/* Video Reel Container - Formato vertical (9:16) */}
+          <div className="flex justify-center">
+            <div className="relative w-full sm:w-96 bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border-8 border-black" style={{ paddingBottom: '177.78%', height: 0, maxWidth: '400px' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1184600074?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="atendimento"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            </div>
+          </div>
+
+          {/* CTA após vídeo */}
+          <div className="text-center mt-8">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-teal-600 text-white font-bold px-8 py-4 rounded-lg hover:bg-teal-700 transition-all"
+            >
+              <WhatsAppIcon />
+              Agendar Agora
             </a>
           </div>
         </section>
