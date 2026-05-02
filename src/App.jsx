@@ -2,8 +2,9 @@
 // Serviço de Atendimento Domiciliar
 // Stack: React + Tailwind CSS
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./assets/logo.png";
+import matheusProfile from "./assets/matheus-profile.png";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PrivacyPolicy from "./PrivacyPolicy";
 import { Link } from "react-router-dom";
@@ -86,6 +87,19 @@ const SERVICOS = [
 ];
 
 function LandingPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024);
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="bg-white text-gray-900 font-sans antialiased">
 
@@ -115,12 +129,12 @@ function LandingPage() {
 
         {/* ── HERO / CHAMADA PRINCIPAL COM IMAGEM ── */}
         <section 
-          className="relative py-32 px-6 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative py-32 px-6 min-h-screen flex items-center justify-start overflow-hidden"
           style={{
-            backgroundImage: `url('/hero-iphone.png')`,
+            backgroundImage: isMobile ? 'none' : `url('/hero-iphone.png')`,
             backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
+            backgroundPosition: 'right bottom',
+            backgroundSize: '30%',
             backgroundRepeat: 'no-repeat',
           }}
         >
@@ -128,8 +142,8 @@ function LandingPage() {
           <div className="absolute inset-0 bg-black/40" />
           
           {/* Conteúdo texto sobre a imagem */}
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <div className="mb-8 flex justify-center">
+          <div className="relative z-10 max-w-4xl text-left pl-20">
+            <div className="mb-8 flex justify-start">
               <img src={logo} alt="IGo Service" className="w-24 h-24 drop-shadow-lg" />
             </div>
             
@@ -137,7 +151,7 @@ function LandingPage() {
               Seja bem-vindo à <span className="text-teal-300">IGo Service</span>!
             </h1>
             
-            <p className="text-xl text-white/95 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p className="text-xl text-white/95 mb-10 max-w-2xl leading-relaxed drop-shadow-lg font-medium">
               Atendimento profissional <strong>na sua porta</strong>. Você continua em casa, nós vamos até você. 
               Serviço rápido, de qualidade e com garantia de 90 dias.
             </p>
@@ -230,6 +244,96 @@ function LandingPage() {
             >
               FALAR COM ESPECIALISTA
             </a>
+          </div>
+        </section>
+
+        {/* ── QUEM SOU EU ── */}
+        <section className="bg-gradient-to-r from-gray-50 to-white py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              
+              {/* Texto - LADO ESQUERDO */}
+              <div>
+                <span className="text-xs font-semibold text-teal-600 tracking-widest uppercase">
+                  Conheça o profissional
+                </span>
+                <h2 className="text-4xl font-bold text-gray-900 mt-3 mb-4">
+                  Matheus Diresto
+                </h2>
+                <p className="text-lg text-teal-600 font-semibold mb-6">
+                  26 anos • Técnico Especialista
+                </p>
+                
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    Sou <strong>Matheus Diresto</strong>. Formado em Análise e Desenvolvimento de Sistemas, 
+                    mas realizado em ajudar pessoas a voltar a usar seus aparelhos.
+                  </p>
+                  
+                  <p>
+                    Pode parecer um caminho inusitado, mas a verdade é simples: 
+                    a formação me deu ferramentas que a maioria dos técnicos não tem.
+                  </p>
+                  
+                  <p>
+                    Penso em cada problema como um desenvolvedor pensa em um bug — 
+                    procuro a causa raiz, não apenas o sintoma. Isso significa:
+                  </p>
+
+                  <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 space-y-2">
+                    <p className="flex items-start gap-2">
+                      <span className="text-teal-600 font-bold text-lg">✓</span>
+                      <span><strong>Diagnóstico mais preciso</strong></span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-teal-600 font-bold text-lg">✓</span>
+                      <span><strong>Soluções mais eficientes</strong></span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-teal-600 font-bold text-lg">✓</span>
+                      <span><strong>Economia de tempo (e dinheiro) para você</strong></span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-teal-600 font-bold text-lg">✓</span>
+                      <span><strong>Profissionalismo garantido</strong></span>
+                    </p>
+                  </div>
+                  
+                  <p>
+                    Com 500+ atendimentos realizados com sucesso, meu objetivo é 
+                    simples: sua satisfação e confiança. <strong>Sempre.</strong>
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-10">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-teal-600 text-white font-bold px-10 py-4 rounded-lg hover:bg-teal-700 transition text-lg shadow-lg"
+                  >
+                    <WhatsAppIcon />
+                    Falar com Matheus
+                  </a>
+                </div>
+              </div>
+
+              {/* Foto - LADO DIREITO (MENOR) */}
+              <div className="flex justify-center md:justify-end">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-blue-600 rounded-2xl blur-2xl opacity-30" />
+                  <img 
+                    src={matheusProfile} 
+                    alt="Matheus Diresto" 
+                    className="relative w-60 h-auto rounded-2xl shadow-2xl object-cover"
+                    onError={(e) => {
+                      e.target.src = "https://via.placeholder.com/240x300?text=Matheus+Diresto";
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
