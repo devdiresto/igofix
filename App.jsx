@@ -364,18 +364,17 @@ function LandingPage() {
               </a>
             </div>
 
-            {/* Mapa Embed */}
-            <div className="bg-gray-200 rounded-xl overflow-hidden h-full min-h-96">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.123456789!2d-51.5!3d-29.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIGo%20Service!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+           {/* Mapa Embed */}
+<div className="bg-gray-200 rounded-xl overflow-hidden h-full min-h-96">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d442498.53748737584!2d-51.0717172!3d-29.950108400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951975f0dc61e851%3A0x33db6f09aa72ff5e!2sIGo%20Fix%20-%20Assist%C3%AAncia%20T%C3%A9cnica%20Delivery%20-%20Conserto%20de%20IPhone%20%2F%20Troca%20de%20tela%20%2F%20Troca%20de%20Bateria!5e0!3m2!1spt-BR!2sbr!4v1777745934832!5m2!1spt-BR!2sbr"    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
           </div>
         </section>
 
