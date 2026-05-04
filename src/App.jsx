@@ -266,42 +266,43 @@ function LandingPage() {
                 
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Sou <strong>Matheus Diresto</strong>. Formado em Análise e Desenvolvimento de Sistemas, 
-                    mas realizado em ajudar pessoas a voltar a usar seus aparelhos.
+                    Sou <strong>Matheus Diresto</strong>, gaúcho de coração que gosta de um bom café 
+                    enquanto resolve os problemas tecnológicos das pessoas. Trabalho com foco e dedicação 
+                    para entregar sempre o melhor.
                   </p>
                   
                   <p>
-                    Pode parecer um caminho inusitado, mas a verdade é simples: 
-                    a formação me deu ferramentas que a maioria dos técnicos não tem.
+                    Cada cliente é importante para mim. Entendo que seu celular, notebook ou qualquer 
+                    equipamento não é só um aparelho — é parte da sua rotina, do seu trabalho, 
+                    da sua conexão com quem você ama.
                   </p>
                   
                   <p>
-                    Penso em cada problema como um desenvolvedor pensa em um bug — 
-                    procuro a causa raiz, não apenas o sintoma. Isso significa:
+                    Por isso meu compromisso é claro:
                   </p>
 
                   <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 space-y-2">
                     <p className="flex items-start gap-2">
                       <span className="text-teal-600 font-bold text-lg">✓</span>
-                      <span><strong>Diagnóstico mais preciso</strong></span>
+                      <span><strong>Resolver seu problema</strong> com eficiência e qualidade</span>
                     </p>
                     <p className="flex items-start gap-2">
                       <span className="text-teal-600 font-bold text-lg">✓</span>
-                      <span><strong>Soluções mais eficientes</strong></span>
+                      <span><strong>Satisfazer sua necessidade</strong> como se fosse minha própria</span>
                     </p>
                     <p className="flex items-start gap-2">
                       <span className="text-teal-600 font-bold text-lg">✓</span>
-                      <span><strong>Economia de tempo (e dinheiro) para você</strong></span>
+                      <span><strong>Qualidade garantida</strong> no atendimento e no reparo realizado</span>
                     </p>
                     <p className="flex items-start gap-2">
                       <span className="text-teal-600 font-bold text-lg">✓</span>
-                      <span><strong>Profissionalismo garantido</strong></span>
+                      <span><strong>Transparência sempre</strong> — você sabe o que esperar de mim</span>
                     </p>
                   </div>
                   
                   <p>
-                    Com 500+ atendimentos realizados com sucesso, meu objetivo é 
-                    simples: sua satisfação e confiança. <strong>Sempre.</strong>
+                    Com mais de 500 atendimentos bem-sucedidos, posso garantir: 
+                    você vai receber meu melhor trabalho, sempre.
                   </p>
                 </div>
 
